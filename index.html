@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>speakTODO App</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+        background: navy;
+        color: lime;
+    }
+
+    input {
+        padding: 10px;
+        width: 200px;
+        margin-right: 10px;
+    }
+
+    button {
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        background: #f4f4f4;
+        margin: 5px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .delete-btn {
+        background: red;
+        color: white;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+    }
+</style>
+
+</head>
+<body>
+    <h1>ToDo App</h1>
+    
+    <div>
+        <input type="text" id="todoText" placeholder="Enter a task">
+        <button onclick="addTodo()">Add Task</button>
+    </div>
+    
+    <ul id="todoList"></ul>
+    
+
+      </body>
+      <script src="script-speaktodo.js"></script>
+
+</html>
