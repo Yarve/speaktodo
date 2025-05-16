@@ -1,0 +1,7 @@
+
+launch.txt
+
+Запусти в PostgreSQL:
+
+
+psql -U postgres -d todoapp -f database.sql
