@@ -1,5 +1,12 @@
 README speaktodo
 
+Vultr server
+(wX4r[2{wLfy*#W=
+
+sudo env PATH=$PATH:/usr/local/bin /usr/local/lib/node_modules/pm2/bin/pm2 startup rcd-openbsd -u sla --hp /home/sla
+e_modules/pm2/bin/pm2 startup rcd-openbsd -u sla --hp /home/sla
+
+
 Terms:
 admin - админ, разработчик, создатель программист, девелопер - все это здесь синонимы.
 AI (also: assistent, ИИ) - то же что и app. 
@@ -105,7 +112,8 @@ Marking as done, partly done etc.
 
 3. Development Stages 
 
-3.1. Version 1.0 solo
+3.1. Version 1.0 solo - https://yarve.com/td
+
 3.1.1. Define programming languages (say JavaScript, Python) and Database (say Postgre on my server).
 3.1.2. Создать архитектуру (без графического интерфейса или с очень минималистичным интерфейсом).
 3.1.3. Интегрировать ИИ (например, с помощью API).

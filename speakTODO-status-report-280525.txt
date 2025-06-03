@@ -1,0 +1,11 @@
+Claude СТАТУС НА 28.05.2025:
+✅ nginx.conf исправлен - все домены работают
+✅ HTTPS для yarve.com настроен  
+✅ yarve.com/now и yarve.com/map работают
+❌ oneform.net показывает неправильный контент (DNS проблема)
+🔄 speakTODO проект - нужно вернуться к разработке
+
+СЛЕДУЮЩИЕ ШАГИ:
+1. Исправить DNS для oneform.net (whois oneform.net)
+2. Продолжить speakTODO: исправить PostgreSQL подключение
+3. Добавить UI кнопки для статусов задач

@@ -9,12 +9,13 @@ const port = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
+
 // PostgreSQL database settings
 const pool = new Pool({
-  user: '_postgresql',
-  host: 'localhost',
+  user: 'postgres',
+  host: 'yarve.com' ,  // before it were: '0.0.0.0' Server listens all the IPs
   database: 'todoapp',
-  // password: '333333',  ← ЗАКОММЕНТИРОВАТЬ
+  password: '333333',
   port: 5432,
   ssl: false 
 });
@@ -79,6 +80,8 @@ app.put('/todos/:id/details', async (req, res) => {
   }
 });
 
+
+
 app.delete('/todos/:id', async (req, res) => {
   const { id } = req.params;
   try {
@@ -89,21 +92,21 @@ app.delete('/todos/:id', async (req, res) => {
   }
 });
 
-// Test routes
+// Just for test
 app.get('/todo', (req, res) => {
   res.send('TODO route is working!');
+});
+
+
+// Start server
+app.listen(port, () => {
+  console.log(`Server running on http://0.0.0.0:${port}`);
 });
 
 app.get('/', (req, res) => {
   res.send('API is working. Use /todos to get data.');
 });
 
-// 404 handler - MUST be last!
 app.use((req, res) => {
   res.status(404).send('Not Found');
-});
-
-// Start server - MUST be at the very end!
-app.listen(port, () => {
-  console.log(`Server running on http://0.0.0.0:${port}`);
 });

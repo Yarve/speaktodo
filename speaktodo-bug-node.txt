@@ -1,0 +1,829 @@
+yarve@yarve-ThinkPad-X230:~$ cd ~/SynologyDrive/FTP/speaktodo/
+yarve@yarve-ThinkPad-X230:~/SynologyDrive/FTP/speaktodo$ node server.js
+Command 'node' not found, but can be installed with:
+sudo apt install nodejs
+yarve@yarve-ThinkPad-X230:~/SynologyDrive/FTP/speaktodo$ sudo apt update
+[sudo] password for yarve: 
+Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Hit:2 https://linux.teamviewer.com/deb stable InRelease                                                                
+Hit:3 https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/jammy pgadmin4 InRelease                                     
+Hit:4 http://ca.archive.ubuntu.com/ubuntu jammy InRelease                                                     
+Get:5 http://ca.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [2,346 kB]
+Get:7 http://ca.archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+Get:8 http://ca.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [2,591 kB]
+Get:9 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [355 kB]
+Get:10 http://security.ubuntu.com/ubuntu jammy-security/main amd64 DEP-11 Metadata [54.6 kB]    
+Get:11 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [3,448 kB]           
+Get:12 http://ca.archive.ubuntu.com/ubuntu jammy-updates/main i386 Packages [809 kB]                
+Get:13 http://ca.archive.ubuntu.com/ubuntu jammy-updates/main amd64 DEP-11 Metadata [114 kB]         
+Get:14 http://ca.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 DEP-11 Metadata [212 B]   
+Get:15 http://ca.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1,208 kB]
+Get:16 http://ca.archive.ubuntu.com/ubuntu jammy-updates/universe i386 Packages [767 kB]      
+Get:17 http://ca.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [298 kB]    
+Get:18 http://ca.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 DEP-11 Metadata [359 kB]   
+Get:19 http://ca.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 DEP-11 Metadata [940 B]              
+Get:20 http://ca.archive.ubuntu.com/ubuntu jammy-backports/main amd64 DEP-11 Metadata [7,092 B]       
+Get:21 http://ca.archive.ubuntu.com/ubuntu jammy-backports/restricted amd64 DEP-11 Metadata [212 B]       
+Get:22 http://ca.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 DEP-11 Metadata [24.3 kB]
+Get:23 http://ca.archive.ubuntu.com/ubuntu jammy-backports/multiverse amd64 DEP-11 Metadata [212 B]      
+Get:24 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [617 kB]
+Get:25 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 DEP-11 Metadata [208 B]
+Get:26 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [974 kB]
+Get:27 http://security.ubuntu.com/ubuntu jammy-security/universe i386 Packages [659 kB]
+Get:28 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 DEP-11 Metadata [125 kB]
+Get:29 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 DEP-11 Metadata [208 B]
+Fetched 15.1 MB in 5s (3,251 kB/s)                     
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+4 packages can be upgraded. Run 'apt list --upgradable' to see them.
+yarve@yarve-ThinkPad-X230:~/SynologyDrive/FTP/speaktodo$ sudo apt install nodejs npm
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  python3-brotli python3-pycryptodome python3-pyxattr python3-websockets rtmpdump
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  gyp libc-ares2 libjs-events libjs-highlight.js libjs-inherits libjs-is-typedarray libjs-psl libjs-source-map
+  libjs-sprintf-js libjs-typedarray-to-buffer libnode-dev libnode72 libssl-dev libuv1-dev node-abab node-abbrev
+  node-agent-base node-ansi-regex node-ansi-styles node-ansistyles node-aproba node-archy node-are-we-there-yet
+  node-argparse node-arrify node-asap node-asynckit node-balanced-match node-brace-expansion node-builtins
+  node-cacache node-chalk node-chownr node-clean-yaml-object node-cli-table node-clone node-color-convert
+  node-color-name node-colors node-columnify node-combined-stream node-commander node-console-control-strings
+  node-copy-concurrently node-core-util-is node-coveralls node-cssom node-cssstyle node-debug node-decompress-response
+  node-defaults node-delayed-stream node-delegates node-depd node-diff node-encoding node-end-of-stream node-err-code
+  node-escape-string-regexp node-esprima node-events node-fancy-log node-fetch node-foreground-child node-form-data
+  node-fs-write-stream-atomic node-fs.realpath node-function-bind node-gauge node-get-stream node-glob node-got
+  node-graceful-fs node-growl node-gyp node-has-flag node-has-unicode node-hosted-git-info node-https-proxy-agent
+  node-iconv-lite node-iferr node-imurmurhash node-indent-string node-inflight node-inherits node-ini node-ip
+  node-ip-regex node-is-buffer node-is-plain-obj node-is-typedarray node-isarray node-isexe node-js-yaml node-jsdom
+  node-json-buffer node-json-parse-better-errors node-jsonparse node-kind-of node-lcov-parse node-lodash-packages
+  node-log-driver node-lowercase-keys node-lru-cache node-mime node-mime-types node-mimic-response node-minimatch
+  node-minimist node-minipass node-mkdirp node-move-concurrently node-ms node-mute-stream node-negotiator node-nopt
+  node-normalize-package-data node-npm-bundled node-npm-package-arg node-npmlog node-object-assign node-once
+  node-opener node-osenv node-p-cancelable node-p-map node-path-is-absolute node-process-nextick-args
+  node-promise-inflight node-promise-retry node-promzard node-psl node-pump node-punycode node-quick-lru node-read
+  node-read-package-json node-readable-stream node-resolve node-retry node-rimraf node-run-queue node-safe-buffer
+  node-semver node-set-blocking node-signal-exit node-slash node-slice-ansi node-source-map node-source-map-support
+  node-spdx-correct node-spdx-exceptions node-spdx-expression-parse node-spdx-license-ids node-sprintf-js node-ssri
+  node-stack-utils node-stealthy-require node-string-decoder node-string-width node-strip-ansi node-supports-color
+  node-tap node-tap-mocha-reporter node-tap-parser node-tar node-text-table node-time-stamp node-tmatch
+  node-tough-cookie node-typedarray-to-buffer node-unique-filename node-universalify node-util-deprecate
+  node-validate-npm-package-license node-validate-npm-package-name node-wcwidth.js node-webidl-conversions
+  node-whatwg-fetch node-which node-wide-align node-wrappy node-write-file-atomic node-ws node-yallist nodejs-doc
+Suggested packages:
+  libjs-angularjs libssl-doc node-nyc
+The following NEW packages will be installed:
+  gyp libc-ares2 libjs-events libjs-highlight.js libjs-inherits libjs-is-typedarray libjs-psl libjs-source-map
+  libjs-sprintf-js libjs-typedarray-to-buffer libnode-dev libnode72 libssl-dev libuv1-dev node-abab node-abbrev
+  node-agent-base node-ansi-regex node-ansi-styles node-ansistyles node-aproba node-archy node-are-we-there-yet
+  node-argparse node-arrify node-asap node-asynckit node-balanced-match node-brace-expansion node-builtins
+  node-cacache node-chalk node-chownr node-clean-yaml-object node-cli-table node-clone node-color-convert
+  node-color-name node-colors node-columnify node-combined-stream node-commander node-console-control-strings
+  node-copy-concurrently node-core-util-is node-coveralls node-cssom node-cssstyle node-debug node-decompress-response
+  node-defaults node-delayed-stream node-delegates node-depd node-diff node-encoding node-end-of-stream node-err-code
+  node-escape-string-regexp node-esprima node-events node-fancy-log node-fetch node-foreground-child node-form-data
+  node-fs-write-stream-atomic node-fs.realpath node-function-bind node-gauge node-get-stream node-glob node-got
+  node-graceful-fs node-growl node-gyp node-has-flag node-has-unicode node-hosted-git-info node-https-proxy-agent
+  node-iconv-lite node-iferr node-imurmurhash node-indent-string node-inflight node-inherits node-ini node-ip
+  node-ip-regex node-is-buffer node-is-plain-obj node-is-typedarray node-isarray node-isexe node-js-yaml node-jsdom
+  node-json-buffer node-json-parse-better-errors node-jsonparse node-kind-of node-lcov-parse node-lodash-packages
+  node-log-driver node-lowercase-keys node-lru-cache node-mime node-mime-types node-mimic-response node-minimatch
+  node-minimist node-minipass node-mkdirp node-move-concurrently node-ms node-mute-stream node-negotiator node-nopt
+  node-normalize-package-data node-npm-bundled node-npm-package-arg node-npmlog node-object-assign node-once
+  node-opener node-osenv node-p-cancelable node-p-map node-path-is-absolute node-process-nextick-args
+  node-promise-inflight node-promise-retry node-promzard node-psl node-pump node-punycode node-quick-lru node-read
+  node-read-package-json node-readable-stream node-resolve node-retry node-rimraf node-run-queue node-safe-buffer
+  node-semver node-set-blocking node-signal-exit node-slash node-slice-ansi node-source-map node-source-map-support
+  node-spdx-correct node-spdx-exceptions node-spdx-expression-parse node-spdx-license-ids node-sprintf-js node-ssri
+  node-stack-utils node-stealthy-require node-string-decoder node-string-width node-strip-ansi node-supports-color
+  node-tap node-tap-mocha-reporter node-tap-parser node-tar node-text-table node-time-stamp node-tmatch
+  node-tough-cookie node-typedarray-to-buffer node-unique-filename node-universalify node-util-deprecate
+  node-validate-npm-package-license node-validate-npm-package-name node-wcwidth.js node-webidl-conversions
+  node-whatwg-fetch node-which node-wide-align node-wrappy node-write-file-atomic node-ws node-yallist nodejs
+  nodejs-doc npm
+0 upgraded, 188 newly installed, 0 to remove and 4 not upgraded.
+Need to get 21.2 MB of archives.
+After this operation, 103 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 gyp all 0.1+20210831gitd6c5dd5-5 [238 kB]
+Get:2 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-events all 3.3.0+~3.0.0-2 [9,734 B]
+Get:3 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-highlight.js all 9.18.5+dfsg1-1 [367 kB]
+Get:4 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-is-typedarray all 1.0.0-4 [3,804 B]
+Get:5 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-psl all 1.8.0+ds-6 [76.3 kB]
+Get:6 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-sprintf-js all 1.1.2+ds1+~1.1.2-1 [12.8 kB]
+Get:7 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-typedarray-to-buffer all 4.0.0-2 [4,658 B]
+Get:8 http://ca.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libssl-dev amd64 3.0.2-0ubuntu1.19 [2,376 kB]
+Get:9 http://ca.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libuv1-dev amd64 1.43.0-1ubuntu0.1 [130 kB]
+Get:10 http://ca.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libc-ares2 amd64 1.18.1-1ubuntu0.22.04.3 [45.1 kB]
+Get:11 http://ca.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libnode72 amd64 12.22.9~dfsg-1ubuntu3.6 [10.8 MB]
+Get:12 http://ca.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libnode-dev amd64 12.22.9~dfsg-1ubuntu3.6 [609 kB]
+Get:13 http://ca.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 nodejs amd64 12.22.9~dfsg-1ubuntu3.6 [122 kB]
+Get:14 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-abab all 2.0.5-2 [6,578 B]
+Get:15 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ms all 2.1.3+~cs0.7.31-2 [5,782 B]
+Get:16 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-debug all 4.3.2+~cs4.1.7-1 [17.6 kB]
+Get:17 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-yallist all 4.0.0+~4.0.1-1 [8,322 B]
+Get:18 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-lru-cache all 6.0.0+~5.1.1-1 [11.3 kB]
+Get:19 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-semver all 7.3.5+~7.3.8-1 [41.5 kB]
+Get:20 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-agent-base all 6.0.2+~cs5.4.2-1 [17.9 kB]
+Get:21 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ansi-regex all 5.0.1-1 [4,984 B]
+Get:22 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ansistyles all 0.1.3-5 [4,546 B]
+Get:23 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-aproba all 2.0.0-2 [5,620 B]
+Get:24 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-delegates all 1.0.0-3 [4,280 B]
+Get:25 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-inherits all 2.0.4-4 [3,468 B]
+Get:26 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-inherits all 2.0.4-4 [3,010 B]
+Get:27 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-core-util-is all 1.0.3-1 [4,066 B]
+Get:28 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-safe-buffer all 5.2.1+~cs2.1.2-2 [15.7 kB]
+Get:29 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-string-decoder all 1.3.0-5 [7,046 B]
+Get:30 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-process-nextick-args all 2.0.1-2 [3,730 B]
+Get:31 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-util-deprecate all 1.0.2-3 [4,202 B]
+Get:32 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-isarray all 2.0.5-3 [3,934 B]
+Get:33 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-readable-stream all 3.6.0+~cs3.0.0-1 [32.6 kB]
+Get:34 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-are-we-there-yet all 3.0.0+~1.1.0-1 [8,920 B]
+Get:35 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-arrify all 2.0.1-2 [3,610 B]
+Get:36 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-asap all 2.0.6+~2.0.0-1 [14.4 kB]
+Get:37 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-asynckit all 0.4.0-4 [10.6 kB]
+Get:38 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-builtins all 4.0.0-1 [3,860 B]
+Get:39 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-chownr all 2.0.0-1 [4,404 B]
+Get:40 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-fs.realpath all 1.0.0-2 [6,106 B]                 
+Get:41 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-wrappy all 1.0.2-2 [3,658 B]                      
+Get:42 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-once all 1.4.0-4 [4,708 B]                        
+Get:43 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-inflight all 1.0.6-2 [3,940 B]                    
+Get:44 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-balanced-match all 2.0.0-1 [4,910 B]              
+Get:45 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-brace-expansion all 2.0.1-1 [7,458 B]             
+Get:46 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-minimatch all 3.1.1+~3.0.5-1 [16.9 kB]            
+Get:47 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-path-is-absolute all 2.0.0-2 [4,062 B]            
+Get:48 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-glob all 7.2.1+~cs7.6.15-1 [131 kB]               
+Get:49 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-graceful-fs all 4.2.4+repack-1 [12.5 kB]          
+Get:50 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-mkdirp all 1.0.4+~1.0.2-1 [11.4 kB]               
+Get:51 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-iferr all 1.0.2+~1.0.2-1 [4,610 B]                
+Get:52 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-imurmurhash all 0.1.4+dfsg+~0.1.1-1 [8,510 B]     
+Get:53 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-fs-write-stream-atomic all 1.0.10-5 [5,256 B]     
+Get:54 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-rimraf all 3.0.2-1 [10.1 kB]                      
+Get:55 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-run-queue all 2.0.0-2 [5,092 B]                   
+Get:56 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-copy-concurrently all 1.0.5-8 [7,118 B]           
+Get:57 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-move-concurrently all 1.0.1-4 [5,120 B]           
+Get:58 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-escape-string-regexp all 4.0.0-2 [4,328 B]        
+Get:59 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-indent-string all 4.0.0-2 [4,122 B]               
+Get:60 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-p-map all 4.0.0+~3.1.0+~3.0.1-1 [8,058 B]         
+Get:61 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-promise-inflight all 1.0.1+~1.0.0-1 [4,896 B]     
+Get:62 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ssri all 8.0.1-2 [19.6 kB]                        
+Get:63 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-unique-filename all 1.1.1+ds-1 [3,832 B]          
+Get:64 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-cacache all 15.0.5+~cs13.9.21-3 [34.9 kB]         
+Get:65 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-clean-yaml-object all 0.1.0-5 [4,718 B]           
+Get:66 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-clone all 2.1.2-3 [8,344 B]                       
+Get:67 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-color-name all 1.1.4+~1.1.1-2 [6,076 B]           
+Get:68 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-color-convert all 2.0.1-1 [10.2 kB]               
+Get:69 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-colors all 1.4.0-3 [12.3 kB]                      
+Get:70 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-strip-ansi all 6.0.1-1 [4,184 B]                  
+Get:71 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-defaults all 1.0.3+~1.0.3-1 [4,288 B]             
+Get:72 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-wcwidth.js all 1.0.2-1 [7,278 B]                  
+Get:73 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-columnify all 1.5.4+~1.5.1-1 [12.6 kB]            
+Get:74 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-console-control-strings all 1.1.0-2 [5,428 B]     
+Get:75 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-growl all 1.10.5-4 [7,064 B]                      
+Get:76 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-sprintf-js all 1.1.2+ds1+~1.1.2-1 [3,916 B]       
+Get:77 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-argparse all 2.0.1-2 [33.2 kB]                    
+Get:78 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-esprima all 4.0.1+ds+~4.0.3-2 [69.3 kB]           
+Get:79 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-js-yaml all 4.1.0+dfsg+~4.0.5-6 [62.7 kB]         
+Get:80 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-lcov-parse all 1.0.0+20170612git80d039574ed9-5 [5,084 B]
+Get:81 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-log-driver all 1.2.7+git+20180219+bba1761737-7 [5,436 B]
+Get:82 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-is-plain-obj all 3.0.0-2 [3,994 B]                
+Get:83 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-is-buffer all 2.0.5-2 [4,128 B]                   
+Get:84 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-kind-of all 6.0.3+dfsg-2 [8,628 B]                
+Get:85 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-minimist all 1.2.5+~cs5.3.2-1 [9,434 B]           
+Get:86 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-cssom all 0.4.4-3 [14.1 kB]                       
+Get:87 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-cssstyle all 2.3.0-2 [30.3 kB]                    
+Get:88 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-delayed-stream all 1.0.0-5 [5,464 B]              
+Get:89 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-combined-stream all 1.0.8+~1.0.3-1 [7,432 B]      
+Get:90 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-mime all 3.0.0+dfsg+~cs3.96.1-1 [38.1 kB]         
+Get:91 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-mime-types all 2.1.33-1 [6,944 B]                 
+Get:92 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-form-data all 3.0.1-1 [13.4 kB]                   
+Get:93 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-events all 3.3.0+~3.0.0-2 [3,090 B]               
+Get:94 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-https-proxy-agent all 5.0.0+~cs8.0.0-3 [16.4 kB]  
+Get:95 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-iconv-lite all 0.6.3-2 [167 kB]                   
+Get:96 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-lodash-packages all 4.17.21+dfsg+~cs8.31.198.20210220-5 [166 kB]
+Get:97 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-stealthy-require all 1.1.1-5 [7,176 B]            
+Get:98 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-punycode all 2.1.1-5 [9,902 B]                    
+Get:99 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-psl all 1.8.0+ds-6 [39.6 kB]                      
+Get:100 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-universalify all 2.0.0-3 [4,266 B]               
+Get:101 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tough-cookie all 4.0.0-2 [31.7 kB]               
+Ign:102 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-webidl-conversions all 7.0.0~1.1.0+~cs15.1.20180823-2
+Ign:103 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-commander all 9.0.0-2                            
+Ign:104 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-mute-stream all 0.0.8+~0.0.1-1                   
+Ign:105 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-read all 1.0.7-3                                 
+Ign:106 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ws all 8.5.0+~cs13.3.3-2                         
+Ign:107 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-jsdom all 19.0.0+~cs90.11.27-1                   
+Ign:108 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-fetch all 2.6.7+~2.5.12-1                        
+Ign:109 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-coveralls all 3.1.1-1                            
+Ign:110 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-mimic-response all 3.1.0-7                       
+Ign:111 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-decompress-response all 6.0.0-2                  
+Ign:112 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-diff all 5.0.0~dfsg+~5.0.1-3                     
+Ign:113 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-err-code all 2.0.3+dfsg-3                        
+Ign:114 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-time-stamp all 2.2.0-1                           
+Ign:115 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-fancy-log all 1.3.3+~cs1.3.1-2                   
+Ign:116 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-signal-exit all 3.0.6+~3.0.1-1                   
+Ign:117 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-foreground-child all 2.0.0-3                     
+Ign:118 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-function-bind all 1.1.1+repacked+~1.0.3-1        
+Ign:119 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-has-unicode all 2.0.1-4                          
+Ign:120 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ansi-styles all 4.3.0+~4.2.0-1                   
+Ign:121 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-slice-ansi all 5.0.0+~cs9.0.0-4                  
+Ign:122 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-string-width all 4.2.3+~cs13.2.3-1               
+Ign:123 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-wide-align all 1.1.3-4                           
+Ign:124 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-gauge all 4.0.2-1                                
+Ign:125 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-end-of-stream all 1.4.4+~1.4.1-1                 
+Ign:126 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-pump all 3.0.0-5                                 
+Ign:127 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-get-stream all 6.0.1-1                           
+Ign:128 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-lowercase-keys all 2.0.0-2                       
+Ign:129 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-json-buffer all 3.0.1-1                          
+Ign:130 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-p-cancelable all 2.1.1-1                         
+Ign:131 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-quick-lru all 5.1.1-1                            
+Ign:132 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-got all 11.8.3+~cs58.7.37-1                      
+Ign:133 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-has-flag all 4.0.0-2                             
+Ign:134 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-hosted-git-info all 4.0.2-1                      
+Ign:135 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ip all 1.1.5+~1.1.0-1                            
+Ign:136 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ip-regex all 4.3.0+~4.1.1-1                      
+Ign:137 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-is-typedarray all 1.0.0-4                        
+Ign:138 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-isexe all 2.0.0+~2.0.1-4                         
+Ign:139 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-json-parse-better-errors all 1.0.2+~cs3.3.1-1    
+Ign:140 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-encoding all 0.1.13-2                            
+Ign:141 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-jsonparse all 1.3.1-10                           
+Ign:142 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-minipass all 3.1.6+~cs8.7.18-1                   
+Ign:143 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-npm-bundled all 1.1.2-1                          
+Ign:144 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-osenv all 0.1.5+~0.1.0-1                         
+Ign:145 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-validate-npm-package-name all 3.0.0-4            
+Ign:146 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-npm-package-arg all 8.1.5-1                      
+Ign:147 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-object-assign all 4.1.1-6                        
+Ign:148 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-opener all 1.5.2+~1.4.0-1                        
+Ign:149 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-retry all 0.13.1+~0.12.1-1                       
+Ign:150 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-promise-retry all 2.0.1-2                        
+Ign:151 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-promzard all 0.3.0-2                             
+Ign:152 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-set-blocking all 2.0.0-2                         
+Ign:153 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-slash all 3.0.0-2                                
+Ign:154 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-source-map all 0.7.0++dfsg2+really.0.6.1-9      
+Ign:155 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-source-map all 0.7.0++dfsg2+really.0.6.1-9       
+Ign:156 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-source-map-support all 0.5.21+ds+~0.5.4-1        
+Ign:157 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-license-ids all 3.0.11-1                    
+Ign:158 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-exceptions all 2.3.0-2                      
+Ign:159 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-expression-parse all 3.0.1+~3.0.1-1         
+Ign:160 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-correct all 3.1.1-2                         
+Ign:161 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-stack-utils all 2.0.5+~2.0.1-1                   
+Ign:162 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-supports-color all 8.1.1+~8.1.1-1                
+Ign:163 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tap-parser all 7.0.0+ds1-6                       
+Ign:164 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tap-mocha-reporter all 3.0.7+ds-2                
+Ign:165 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-text-table all 0.2.0-4                           
+Ign:166 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tmatch all 5.0.0-4                               
+Ign:167 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-typedarray-to-buffer all 4.0.0-2                 
+Ign:168 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-validate-npm-package-license all 3.0.4-2         
+Ign:169 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-whatwg-fetch all 3.6.2-5                         
+Ign:170 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-write-file-atomic all 3.0.3+~3.0.2-1             
+Ign:171 http://ca.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 nodejs-doc all 12.22.9~dfsg-1ubuntu3.6        
+Ign:172 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-abbrev all 1.1.1+~1.1.2-1                        
+Ign:173 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-archy all 1.0.0-4                                
+Ign:174 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-chalk all 4.1.2-1                                
+Ign:175 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-cli-table all 0.3.11+~cs0.13.3-1                 
+Ign:176 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-depd all 2.0.0-2                                 
+Ign:177 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-nopt all 5.0.0-2                                 
+Ign:178 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-npmlog all 6.0.1+~4.1.4-1                        
+Ign:179 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tar all 6.1.11+ds1+~cs6.0.6-1                    
+Ign:180 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-which all 2.0.2+~cs1.3.2-2                       
+Ign:181 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-gyp all 8.4.1-1                                  
+Ign:182 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ini all 2.0.1-1                                  
+Ign:183 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-negotiator all 0.6.2+~0.6.1-1                    
+Ign:184 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-resolve all 1.20.0+~cs5.27.9-1                   
+Ign:185 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-normalize-package-data all 3.0.3+~2.4.1-1        
+Ign:186 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-read-package-json all 4.1.1-1                    
+Ign:187 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tap all 12.0.1+ds-4                              
+Ign:188 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 npm all 8.5.1~ds-1                                    
+Ign:102 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-webidl-conversions all 7.0.0~1.1.0+~cs15.1.20180823-2
+Ign:103 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-commander all 9.0.0-2                            
+Ign:104 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-mute-stream all 0.0.8+~0.0.1-1                   
+Ign:105 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-read all 1.0.7-3                                 
+Ign:106 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ws all 8.5.0+~cs13.3.3-2                         
+Ign:107 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-jsdom all 19.0.0+~cs90.11.27-1                   
+Ign:108 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-fetch all 2.6.7+~2.5.12-1                        
+Ign:109 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-coveralls all 3.1.1-1                            
+Ign:110 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-mimic-response all 3.1.0-7                       
+Ign:111 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-decompress-response all 6.0.0-2                  
+Ign:112 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-diff all 5.0.0~dfsg+~5.0.1-3                     
+Ign:113 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-err-code all 2.0.3+dfsg-3                        
+Ign:114 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-time-stamp all 2.2.0-1                           
+Ign:115 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-fancy-log all 1.3.3+~cs1.3.1-2                   
+Ign:116 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-signal-exit all 3.0.6+~3.0.1-1                   
+Ign:117 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-foreground-child all 2.0.0-3                     
+Ign:118 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-function-bind all 1.1.1+repacked+~1.0.3-1        
+Ign:119 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-has-unicode all 2.0.1-4                          
+Ign:120 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ansi-styles all 4.3.0+~4.2.0-1                   
+Ign:121 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-slice-ansi all 5.0.0+~cs9.0.0-4                  
+Ign:122 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-string-width all 4.2.3+~cs13.2.3-1               
+Ign:123 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-wide-align all 1.1.3-4                           
+Ign:124 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-gauge all 4.0.2-1                                
+Ign:125 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-end-of-stream all 1.4.4+~1.4.1-1                 
+Ign:126 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-pump all 3.0.0-5                                 
+Ign:127 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-get-stream all 6.0.1-1                           
+Ign:128 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-lowercase-keys all 2.0.0-2                       
+Ign:129 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-json-buffer all 3.0.1-1                          
+Ign:130 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-p-cancelable all 2.1.1-1                         
+Ign:131 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-quick-lru all 5.1.1-1                            
+Ign:132 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-got all 11.8.3+~cs58.7.37-1                      
+Ign:133 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-has-flag all 4.0.0-2                             
+Ign:134 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-hosted-git-info all 4.0.2-1                      
+Ign:135 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ip all 1.1.5+~1.1.0-1                            
+Ign:136 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ip-regex all 4.3.0+~4.1.1-1                      
+Ign:137 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-is-typedarray all 1.0.0-4                        
+Ign:138 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-isexe all 2.0.0+~2.0.1-4                         
+Ign:139 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-json-parse-better-errors all 1.0.2+~cs3.3.1-1    
+Ign:140 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-encoding all 0.1.13-2                            
+Ign:141 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-jsonparse all 1.3.1-10                           
+Ign:142 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-minipass all 3.1.6+~cs8.7.18-1                   
+Ign:143 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-npm-bundled all 1.1.2-1                          
+Ign:144 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-osenv all 0.1.5+~0.1.0-1                         
+Ign:145 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-validate-npm-package-name all 3.0.0-4            
+Ign:146 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-npm-package-arg all 8.1.5-1                      
+Ign:147 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-object-assign all 4.1.1-6                        
+Ign:148 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-opener all 1.5.2+~1.4.0-1                        
+Ign:149 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-retry all 0.13.1+~0.12.1-1                       
+Ign:150 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-promise-retry all 2.0.1-2                        
+Ign:151 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-promzard all 0.3.0-2                             
+Ign:152 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-set-blocking all 2.0.0-2                         
+Ign:153 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-slash all 3.0.0-2                                
+Ign:154 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-source-map all 0.7.0++dfsg2+really.0.6.1-9      
+Ign:155 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-source-map all 0.7.0++dfsg2+really.0.6.1-9       
+Ign:156 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-source-map-support all 0.5.21+ds+~0.5.4-1        
+Ign:157 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-license-ids all 3.0.11-1                    
+Ign:158 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-exceptions all 2.3.0-2                      
+Ign:159 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-expression-parse all 3.0.1+~3.0.1-1         
+Ign:160 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-correct all 3.1.1-2                         
+Ign:161 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-stack-utils all 2.0.5+~2.0.1-1                   
+Ign:162 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-supports-color all 8.1.1+~8.1.1-1                
+Ign:163 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tap-parser all 7.0.0+ds1-6                       
+Ign:164 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tap-mocha-reporter all 3.0.7+ds-2                
+Ign:165 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-text-table all 0.2.0-4                           
+Ign:166 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tmatch all 5.0.0-4                               
+Ign:167 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-typedarray-to-buffer all 4.0.0-2                 
+Ign:168 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-validate-npm-package-license all 3.0.4-2         
+Ign:169 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-whatwg-fetch all 3.6.2-5                         
+Ign:170 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-write-file-atomic all 3.0.3+~3.0.2-1             
+Ign:171 http://ca.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 nodejs-doc all 12.22.9~dfsg-1ubuntu3.6        
+Ign:172 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-abbrev all 1.1.1+~1.1.2-1                        
+Ign:173 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-archy all 1.0.0-4                                
+Ign:174 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-chalk all 4.1.2-1                                
+Ign:175 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-cli-table all 0.3.11+~cs0.13.3-1                 
+Ign:176 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-depd all 2.0.0-2                                 
+Ign:177 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-nopt all 5.0.0-2                                 
+Ign:178 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-npmlog all 6.0.1+~4.1.4-1                        
+Ign:179 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tar all 6.1.11+ds1+~cs6.0.6-1                    
+Ign:180 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-which all 2.0.2+~cs1.3.2-2                       
+Ign:181 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-gyp all 8.4.1-1                                  
+Ign:182 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ini all 2.0.1-1                                  
+Ign:183 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-negotiator all 0.6.2+~0.6.1-1                    
+Ign:184 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-resolve all 1.20.0+~cs5.27.9-1                   
+Ign:185 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-normalize-package-data all 3.0.3+~2.4.1-1        
+Ign:186 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-read-package-json all 4.1.1-1                    
+Ign:187 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tap all 12.0.1+ds-4                              
+Ign:188 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 npm all 8.5.1~ds-1                                    
+Ign:102 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-webidl-conversions all 7.0.0~1.1.0+~cs15.1.20180823-2
+Ign:103 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-commander all 9.0.0-2                            
+Ign:104 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-mute-stream all 0.0.8+~0.0.1-1                   
+Ign:105 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-read all 1.0.7-3                                 
+Ign:106 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ws all 8.5.0+~cs13.3.3-2                         
+Ign:107 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-jsdom all 19.0.0+~cs90.11.27-1                   
+Ign:108 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-fetch all 2.6.7+~2.5.12-1                        
+Ign:109 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-coveralls all 3.1.1-1                            
+Ign:110 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-mimic-response all 3.1.0-7                       
+Ign:111 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-decompress-response all 6.0.0-2                  
+Ign:112 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-diff all 5.0.0~dfsg+~5.0.1-3                     
+Ign:113 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-err-code all 2.0.3+dfsg-3                        
+Ign:114 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-time-stamp all 2.2.0-1                           
+Ign:115 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-fancy-log all 1.3.3+~cs1.3.1-2                   
+Ign:116 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-signal-exit all 3.0.6+~3.0.1-1                   
+Ign:117 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-foreground-child all 2.0.0-3                     
+Ign:118 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-function-bind all 1.1.1+repacked+~1.0.3-1        
+Ign:119 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-has-unicode all 2.0.1-4                          
+Ign:120 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ansi-styles all 4.3.0+~4.2.0-1                   
+Ign:121 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-slice-ansi all 5.0.0+~cs9.0.0-4                  
+Ign:122 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-string-width all 4.2.3+~cs13.2.3-1               
+Ign:123 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-wide-align all 1.1.3-4                           
+Ign:124 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-gauge all 4.0.2-1                                
+Ign:125 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-end-of-stream all 1.4.4+~1.4.1-1                 
+Ign:126 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-pump all 3.0.0-5                                 
+Ign:127 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-get-stream all 6.0.1-1                           
+Ign:128 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-lowercase-keys all 2.0.0-2                       
+Ign:129 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-json-buffer all 3.0.1-1                          
+Ign:130 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-p-cancelable all 2.1.1-1                         
+Ign:131 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-quick-lru all 5.1.1-1                            
+Ign:132 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-got all 11.8.3+~cs58.7.37-1                      
+Ign:133 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-has-flag all 4.0.0-2                             
+Ign:134 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-hosted-git-info all 4.0.2-1                      
+Ign:135 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ip all 1.1.5+~1.1.0-1                            
+Ign:136 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ip-regex all 4.3.0+~4.1.1-1                      
+Ign:137 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-is-typedarray all 1.0.0-4                        
+Ign:138 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-isexe all 2.0.0+~2.0.1-4                         
+Ign:139 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-json-parse-better-errors all 1.0.2+~cs3.3.1-1    
+Ign:140 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-encoding all 0.1.13-2                            
+Ign:141 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-jsonparse all 1.3.1-10                           
+Ign:142 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-minipass all 3.1.6+~cs8.7.18-1                   
+Ign:143 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-npm-bundled all 1.1.2-1                          
+Ign:144 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-osenv all 0.1.5+~0.1.0-1                         
+Ign:145 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-validate-npm-package-name all 3.0.0-4            
+Ign:146 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-npm-package-arg all 8.1.5-1                      
+Ign:147 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-object-assign all 4.1.1-6                        
+Ign:148 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-opener all 1.5.2+~1.4.0-1                        
+Ign:149 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-retry all 0.13.1+~0.12.1-1                       
+Ign:150 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-promise-retry all 2.0.1-2                        
+Ign:151 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-promzard all 0.3.0-2                             
+Ign:152 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-set-blocking all 2.0.0-2                         
+Ign:153 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-slash all 3.0.0-2                                
+Ign:154 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-source-map all 0.7.0++dfsg2+really.0.6.1-9      
+Ign:155 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-source-map all 0.7.0++dfsg2+really.0.6.1-9       
+Ign:156 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-source-map-support all 0.5.21+ds+~0.5.4-1        
+Ign:157 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-license-ids all 3.0.11-1                    
+Ign:158 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-exceptions all 2.3.0-2                      
+Ign:159 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-expression-parse all 3.0.1+~3.0.1-1         
+Ign:160 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-correct all 3.1.1-2                         
+Ign:161 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-stack-utils all 2.0.5+~2.0.1-1                   
+Ign:162 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-supports-color all 8.1.1+~8.1.1-1                
+Ign:163 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tap-parser all 7.0.0+ds1-6                       
+Ign:164 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tap-mocha-reporter all 3.0.7+ds-2                
+Ign:165 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-text-table all 0.2.0-4                           
+Ign:166 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tmatch all 5.0.0-4                               
+Ign:167 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-typedarray-to-buffer all 4.0.0-2                 
+Ign:168 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-validate-npm-package-license all 3.0.4-2         
+Ign:169 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-whatwg-fetch all 3.6.2-5                         
+Ign:170 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-write-file-atomic all 3.0.3+~3.0.2-1             
+Ign:171 http://ca.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 nodejs-doc all 12.22.9~dfsg-1ubuntu3.6        
+Ign:172 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-abbrev all 1.1.1+~1.1.2-1                        
+Ign:173 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-archy all 1.0.0-4                                
+Ign:174 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-chalk all 4.1.2-1                                
+Ign:175 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-cli-table all 0.3.11+~cs0.13.3-1                 
+Ign:176 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-depd all 2.0.0-2                                 
+Ign:177 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-nopt all 5.0.0-2                                 
+Ign:178 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-npmlog all 6.0.1+~4.1.4-1                        
+Ign:179 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tar all 6.1.11+ds1+~cs6.0.6-1                    
+Ign:180 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-which all 2.0.2+~cs1.3.2-2                       
+Ign:181 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-gyp all 8.4.1-1                                  
+Ign:182 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ini all 2.0.1-1                                  
+Ign:183 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-negotiator all 0.6.2+~0.6.1-1                    
+Ign:184 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-resolve all 1.20.0+~cs5.27.9-1                   
+Ign:185 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-normalize-package-data all 3.0.3+~2.4.1-1        
+Ign:186 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-read-package-json all 4.1.1-1                    
+Ign:187 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tap all 12.0.1+ds-4                              
+Ign:188 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 npm all 8.5.1~ds-1                                    
+Ign:102 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-webidl-conversions all 7.0.0~1.1.0+~cs15.1.20180823-2
+Ign:103 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-commander all 9.0.0-2                            
+Ign:104 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-mute-stream all 0.0.8+~0.0.1-1                   
+Err:102 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-webidl-conversions all 7.0.0~1.1.0+~cs15.1.20180823-2
+  Could not connect to ca.archive.ubuntu.com:80 (91.189.91.81). - connect (113: No route to host) Could not connect to ca.archive.ubuntu.com:80 (2620:2d:4002:1::101). - connect (101: Network is unreachable) Could not connect to ca.archive.ubuntu.com:80 (91.189.91.83). - connect (113: No route to host) Could not connect to ca.archive.ubuntu.com:80 (2620:2d:4002:1::103). - connect (101: Network is unreachable) [IP: 91.189.91.81 80]
+Ign:105 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-read all 1.0.7-3                                 
+Err:103 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-commander all 9.0.0-2                            
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:106 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ws all 8.5.0+~cs13.3.3-2                         
+Err:104 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-mute-stream all 0.0.8+~0.0.1-1                   
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:107 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-jsdom all 19.0.0+~cs90.11.27-1                   
+Err:105 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-read all 1.0.7-3                                 
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:108 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-fetch all 2.6.7+~2.5.12-1                        
+Err:106 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ws all 8.5.0+~cs13.3.3-2                         
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:109 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-coveralls all 3.1.1-1                            
+Err:107 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-jsdom all 19.0.0+~cs90.11.27-1                   
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:108 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-fetch all 2.6.7+~2.5.12-1                        
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:110 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-mimic-response all 3.1.0-7                       
+Err:109 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-coveralls all 3.1.1-1                            
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:111 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-decompress-response all 6.0.0-2                  
+Err:110 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-mimic-response all 3.1.0-7                       
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:112 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-diff all 5.0.0~dfsg+~5.0.1-3                     
+Ign:113 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-err-code all 2.0.3+dfsg-3                        
+Err:111 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-decompress-response all 6.0.0-2                  
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:114 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-time-stamp all 2.2.0-1                           
+Ign:115 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-fancy-log all 1.3.3+~cs1.3.1-2                   
+Err:112 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-diff all 5.0.0~dfsg+~5.0.1-3                     
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:116 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-signal-exit all 3.0.6+~3.0.1-1                   
+Err:113 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-err-code all 2.0.3+dfsg-3                        
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:117 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-foreground-child all 2.0.0-3                     
+Ign:118 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-function-bind all 1.1.1+repacked+~1.0.3-1        
+Err:114 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-time-stamp all 2.2.0-1                           
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:115 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-fancy-log all 1.3.3+~cs1.3.1-2                   
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:119 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-has-unicode all 2.0.1-4                          
+Ign:120 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ansi-styles all 4.3.0+~4.2.0-1                   
+Ign:121 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-slice-ansi all 5.0.0+~cs9.0.0-4                  
+Err:116 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-signal-exit all 3.0.6+~3.0.1-1                   
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:122 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-string-width all 4.2.3+~cs13.2.3-1               
+Err:117 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-foreground-child all 2.0.0-3                     
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:123 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-wide-align all 1.1.3-4                           
+Err:118 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-function-bind all 1.1.1+repacked+~1.0.3-1        
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:124 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-gauge all 4.0.2-1                                
+Ign:125 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-end-of-stream all 1.4.4+~1.4.1-1                 
+Err:119 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-has-unicode all 2.0.1-4                          
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:126 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-pump all 3.0.0-5                                 
+Err:120 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ansi-styles all 4.3.0+~4.2.0-1                   
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:121 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-slice-ansi all 5.0.0+~cs9.0.0-4                  
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:127 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-get-stream all 6.0.1-1                           
+Err:122 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-string-width all 4.2.3+~cs13.2.3-1               
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:128 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-lowercase-keys all 2.0.0-2                       
+Err:123 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-wide-align all 1.1.3-4                           
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:129 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-json-buffer all 3.0.1-1                          
+Err:124 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-gauge all 4.0.2-1                                
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:125 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-end-of-stream all 1.4.4+~1.4.1-1                 
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:130 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-p-cancelable all 2.1.1-1                         
+Err:126 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-pump all 3.0.0-5                                 
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:131 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-quick-lru all 5.1.1-1                            
+Err:127 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-get-stream all 6.0.1-1                           
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:128 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-lowercase-keys all 2.0.0-2                       
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:129 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-json-buffer all 3.0.1-1                          
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:132 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-got all 11.8.3+~cs58.7.37-1                      
+Err:130 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-p-cancelable all 2.1.1-1                         
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:131 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-quick-lru all 5.1.1-1                            
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:132 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-got all 11.8.3+~cs58.7.37-1                      
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:133 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-has-flag all 4.0.0-2                             
+Err:133 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-has-flag all 4.0.0-2                             
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:134 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-hosted-git-info all 4.0.2-1                      
+Ign:135 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ip all 1.1.5+~1.1.0-1                            
+Err:134 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-hosted-git-info all 4.0.2-1                      
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:135 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ip all 1.1.5+~1.1.0-1                            
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:136 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ip-regex all 4.3.0+~4.1.1-1                      
+Err:136 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ip-regex all 4.3.0+~4.1.1-1                      
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:137 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-is-typedarray all 1.0.0-4                        
+Err:137 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-is-typedarray all 1.0.0-4                        
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:138 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-isexe all 2.0.0+~2.0.1-4                         
+Ign:139 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-json-parse-better-errors all 1.0.2+~cs3.3.1-1    
+Ign:140 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-encoding all 0.1.13-2                            
+Err:138 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-isexe all 2.0.0+~2.0.1-4                         
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:139 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-json-parse-better-errors all 1.0.2+~cs3.3.1-1    
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:140 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-encoding all 0.1.13-2                            
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:141 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-jsonparse all 1.3.1-10                           
+Ign:142 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-minipass all 3.1.6+~cs8.7.18-1                   
+Ign:143 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-npm-bundled all 1.1.2-1                          
+Err:141 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-jsonparse all 1.3.1-10                           
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:142 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-minipass all 3.1.6+~cs8.7.18-1                   
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:143 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-npm-bundled all 1.1.2-1                          
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:144 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-osenv all 0.1.5+~0.1.0-1                         
+Ign:145 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-validate-npm-package-name all 3.0.0-4            
+Ign:146 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-npm-package-arg all 8.1.5-1                      
+Ign:147 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-object-assign all 4.1.1-6                        
+Ign:148 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-opener all 1.5.2+~1.4.0-1                        
+Err:144 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-osenv all 0.1.5+~0.1.0-1                         
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:149 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-retry all 0.13.1+~0.12.1-1                       
+Ign:150 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-promise-retry all 2.0.1-2                        
+Err:145 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-validate-npm-package-name all 3.0.0-4            
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:146 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-npm-package-arg all 8.1.5-1                      
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:147 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-object-assign all 4.1.1-6                        
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:148 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-opener all 1.5.2+~1.4.0-1                        
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:151 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-promzard all 0.3.0-2                             
+Err:149 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-retry all 0.13.1+~0.12.1-1                       
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:150 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-promise-retry all 2.0.1-2                        
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:151 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-promzard all 0.3.0-2                             
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:152 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-set-blocking all 2.0.0-2                         
+Ign:153 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-slash all 3.0.0-2                                
+Err:152 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-set-blocking all 2.0.0-2                         
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:153 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-slash all 3.0.0-2                                
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:154 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-source-map all 0.7.0++dfsg2+really.0.6.1-9      
+Ign:155 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-source-map all 0.7.0++dfsg2+really.0.6.1-9       
+Err:154 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-source-map all 0.7.0++dfsg2+really.0.6.1-9      
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:156 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-source-map-support all 0.5.21+ds+~0.5.4-1        
+Err:155 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-source-map all 0.7.0++dfsg2+really.0.6.1-9       
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:156 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-source-map-support all 0.5.21+ds+~0.5.4-1        
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:157 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-license-ids all 3.0.11-1                    
+Ign:158 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-exceptions all 2.3.0-2                      
+Err:157 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-license-ids all 3.0.11-1                    
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:158 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-exceptions all 2.3.0-2                      
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:159 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-expression-parse all 3.0.1+~3.0.1-1         
+Err:159 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-expression-parse all 3.0.1+~3.0.1-1         
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:160 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-correct all 3.1.1-2                         
+Ign:161 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-stack-utils all 2.0.5+~2.0.1-1                   
+Err:160 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-spdx-correct all 3.1.1-2                         
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:162 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-supports-color all 8.1.1+~8.1.1-1                
+Err:161 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-stack-utils all 2.0.5+~2.0.1-1                   
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:162 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-supports-color all 8.1.1+~8.1.1-1                
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:163 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tap-parser all 7.0.0+ds1-6                       
+Ign:164 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tap-mocha-reporter all 3.0.7+ds-2                
+Err:163 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tap-parser all 7.0.0+ds1-6                       
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:165 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-text-table all 0.2.0-4                           
+Ign:166 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tmatch all 5.0.0-4                               
+Err:164 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tap-mocha-reporter all 3.0.7+ds-2                
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:167 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-typedarray-to-buffer all 4.0.0-2                 
+Err:165 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-text-table all 0.2.0-4                           
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:166 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tmatch all 5.0.0-4                               
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:167 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-typedarray-to-buffer all 4.0.0-2                 
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:168 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-validate-npm-package-license all 3.0.4-2         
+Ign:169 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-whatwg-fetch all 3.6.2-5                         
+Err:168 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-validate-npm-package-license all 3.0.4-2         
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:170 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-write-file-atomic all 3.0.3+~3.0.2-1             
+Err:169 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-whatwg-fetch all 3.6.2-5                         
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:171 http://ca.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 nodejs-doc all 12.22.9~dfsg-1ubuntu3.6        
+Err:170 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-write-file-atomic all 3.0.3+~3.0.2-1             
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:172 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-abbrev all 1.1.1+~1.1.2-1                        
+Ign:173 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-archy all 1.0.0-4                                
+Ign:174 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-chalk all 4.1.2-1                                
+Ign:175 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-cli-table all 0.3.11+~cs0.13.3-1                 
+Ign:171 http://ca.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 nodejs-doc all 12.22.9~dfsg-1ubuntu3.6        
+Ign:176 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-depd all 2.0.0-2                                 
+Ign:177 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-nopt all 5.0.0-2                                 
+Err:172 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-abbrev all 1.1.1+~1.1.2-1                        
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:173 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-archy all 1.0.0-4                                
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:174 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-chalk all 4.1.2-1                                
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:175 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-cli-table all 0.3.11+~cs0.13.3-1                 
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:178 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-npmlog all 6.0.1+~4.1.4-1                        
+Ign:179 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tar all 6.1.11+ds1+~cs6.0.6-1                    
+Ign:180 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-which all 2.0.2+~cs1.3.2-2                       
+Ign:181 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-gyp all 8.4.1-1                                  
+Ign:182 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ini all 2.0.1-1                                  
+Err:176 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-depd all 2.0.0-2                                 
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:177 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-nopt all 5.0.0-2                                 
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:183 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-negotiator all 0.6.2+~0.6.1-1                    
+Ign:184 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-resolve all 1.20.0+~cs5.27.9-1                   
+Ign:185 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-normalize-package-data all 3.0.3+~2.4.1-1        
+Ign:186 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-read-package-json all 4.1.1-1                    
+Err:178 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-npmlog all 6.0.1+~4.1.4-1                        
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:179 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tar all 6.1.11+ds1+~cs6.0.6-1                    
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:180 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-which all 2.0.2+~cs1.3.2-2                       
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:181 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-gyp all 8.4.1-1                                  
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:182 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-ini all 2.0.1-1                                  
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Ign:187 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tap all 12.0.1+ds-4                              
+Ign:188 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 npm all 8.5.1~ds-1                                    
+Err:183 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-negotiator all 0.6.2+~0.6.1-1                    
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:184 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-resolve all 1.20.0+~cs5.27.9-1                   
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:185 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-normalize-package-data all 3.0.3+~2.4.1-1        
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:186 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-read-package-json all 4.1.1-1                    
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:187 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 node-tap all 12.0.1+ds-4                              
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Err:188 http://ca.archive.ubuntu.com/ubuntu jammy/universe amd64 npm all 8.5.1~ds-1                                    
+  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+Get:171 http://security.ubuntu.com/ubuntu jammy-updates/universe amd64 nodejs-doc all 12.22.9~dfsg-1ubuntu3.6 [2,411 kB]
+Fetched 18.6 MB in 17s (1,087 kB/s)                                                                                    
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/j/jsbundle-web-interfaces/node-webidl-conversions_7.0.0%7e1.1.0%2b%7ecs15.1.20180823-2_all.deb  Could not connect to ca.archive.ubuntu.com:80 (91.189.91.81). - connect (113: No route to host) Could not connect to ca.archive.ubuntu.com:80 (2620:2d:4002:1::101). - connect (101: Network is unreachable) Could not connect to ca.archive.ubuntu.com:80 (91.189.91.83). - connect (113: No route to host) Could not connect to ca.archive.ubuntu.com:80 (2620:2d:4002:1::103). - connect (101: Network is unreachable) [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-commander/node-commander_9.0.0-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-mute-stream/node-mute-stream_0.0.8%2b%7e0.0.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-read/node-read_1.0.7-3_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-ws/node-ws_8.5.0%2b%7ecs13.3.3-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-jsdom/node-jsdom_19.0.0%2b%7ecs90.11.27-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-fetch/node-fetch_2.6.7%2b%7e2.5.12-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-coveralls/node-coveralls_3.1.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-mimic-response/node-mimic-response_3.1.0-7_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-decompress-response/node-decompress-response_6.0.0-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-diff/node-diff_5.0.0%7edfsg%2b%7e5.0.1-3_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-err-code/node-err-code_2.0.3%2bdfsg-3_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-time-stamp/node-time-stamp_2.2.0-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-fancy-log/node-fancy-log_1.3.3%2b%7ecs1.3.1-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-signal-exit/node-signal-exit_3.0.6%2b%7e3.0.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-foreground-child/node-foreground-child_2.0.0-3_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-function-bind/node-function-bind_1.1.1%2brepacked%2b%7e1.0.3-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-has-unicode/node-has-unicode_2.0.1-4_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-ansi-styles/node-ansi-styles_4.3.0%2b%7e4.2.0-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-slice-ansi/node-slice-ansi_5.0.0%2b%7ecs9.0.0-4_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-string-width/node-string-width_4.2.3%2b%7ecs13.2.3-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-wide-align/node-wide-align_1.1.3-4_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-gauge/node-gauge_4.0.2-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-end-of-stream/node-end-of-stream_1.4.4%2b%7e1.4.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-pump/node-pump_3.0.0-5_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-get-stream/node-get-stream_6.0.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-lowercase-keys/node-lowercase-keys_2.0.0-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-json-buffer/node-json-buffer_3.0.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-p-cancelable/node-p-cancelable_2.1.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-quick-lru/node-quick-lru_5.1.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-got/node-got_11.8.3%2b%7ecs58.7.37-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-has-flag/node-has-flag_4.0.0-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-hosted-git-info/node-hosted-git-info_4.0.2-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-ip/node-ip_1.1.5%2b%7e1.1.0-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-ip-regex/node-ip-regex_4.3.0%2b%7e4.1.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-is-typedarray/node-is-typedarray_1.0.0-4_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-isexe/node-isexe_2.0.0%2b%7e2.0.1-4_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-json-parse-better-errors/node-json-parse-better-errors_1.0.2%2b%7ecs3.3.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-encoding/node-encoding_0.1.13-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-jsonparse/node-jsonparse_1.3.1-10_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-minipass/node-minipass_3.1.6%2b%7ecs8.7.18-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-npm-bundled/node-npm-bundled_1.1.2-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-osenv/node-osenv_0.1.5%2b%7e0.1.0-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-validate-npm-package-name/node-validate-npm-package-name_3.0.0-4_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-npm-package-arg/node-npm-package-arg_8.1.5-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-object-assign/node-object-assign_4.1.1-6_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-opener/node-opener_1.5.2%2b%7e1.4.0-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-retry/node-retry_0.13.1%2b%7e0.12.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-promise-retry/node-promise-retry_2.0.1-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-promzard/node-promzard_0.3.0-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-set-blocking/node-set-blocking_2.0.0-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-slash/node-slash_3.0.0-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-source-map/libjs-source-map_0.7.0%2b%2bdfsg2%2breally.0.6.1-9_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-source-map/node-source-map_0.7.0%2b%2bdfsg2%2breally.0.6.1-9_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-source-map-support/node-source-map-support_0.5.21%2bds%2b%7e0.5.4-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-spdx-license-ids/node-spdx-license-ids_3.0.11-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-spdx-exceptions/node-spdx-exceptions_2.3.0-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-spdx-expression-parse/node-spdx-expression-parse_3.0.1%2b%7e3.0.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-spdx-correct/node-spdx-correct_3.1.1-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-stack-utils/node-stack-utils_2.0.5%2b%7e2.0.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-supports-color/node-supports-color_8.1.1%2b%7e8.1.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-tap-parser/node-tap-parser_7.0.0%2bds1-6_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-tap-mocha-reporter/node-tap-mocha-reporter_3.0.7%2bds-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-text-table/node-text-table_0.2.0-4_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-tmatch/node-tmatch_5.0.0-4_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-typedarray-to-buffer/node-typedarray-to-buffer_4.0.0-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-validate-npm-package-license/node-validate-npm-package-license_3.0.4-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-whatwg-fetch/node-whatwg-fetch_3.6.2-5_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-write-file-atomic/node-write-file-atomic_3.0.3%2b%7e3.0.2-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-abbrev/node-abbrev_1.1.1%2b%7e1.1.2-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-archy/node-archy_1.0.0-4_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-chalk/node-chalk_4.1.2-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-cli-table/node-cli-table_0.3.11%2b%7ecs0.13.3-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-depd/node-depd_2.0.0-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-nopt/node-nopt_5.0.0-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-npmlog/node-npmlog_6.0.1%2b%7e4.1.4-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-tar/node-tar_6.1.11%2bds1%2b%7ecs6.0.6-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-which/node-which_2.0.2%2b%7ecs1.3.2-2_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-gyp/node-gyp_8.4.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-ini/node-ini_2.0.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-negotiator/node-negotiator_0.6.2%2b%7e0.6.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-resolve/node-resolve_1.20.0%2b%7ecs5.27.9-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-normalize-package-data/node-normalize-package-data_3.0.3%2b%7e2.4.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-read-package-json/node-read-package-json_4.1.1-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/node-tap/node-tap_12.0.1%2bds-4_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/pool/universe/n/npm/npm_8.5.1%7eds-1_all.deb  Unable to connect to ca.archive.ubuntu.com:http: [IP: 91.189.91.81 80]
+E: Unable to fetch some archives, try running apt-get update or apt-get --fix-missing.
+yarve@yarve-ThinkPad-X230:~/SynologyDrive/FTP/speaktodo$ node -v
+Command 'node' not found, but can be installed with:
+sudo apt install nodejs
+yarve@yarve-ThinkPad-X230:~/SynologyDrive/FTP/speaktodo$ npm -v
+Command 'npm' not found, but can be installed with:
+sudo apt install npm
+yarve@yarve-ThinkPad-X230:~/SynologyDrive/FTP/speaktodo$ 
+
