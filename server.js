@@ -15,7 +15,7 @@ const pool = new Pool({
   host: 'localhost',
   database: 'todoapp',
   // password: '333333',  ← ЗАКОММЕНТИРОВАТЬ
-  port: 5432,
+ port: 5432,
   ssl: false 
 });
 
