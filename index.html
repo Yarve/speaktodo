@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>speakTODO App</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+        background: navy;
+        color: lime;
+    }
+
+    .input-section {
+        margin-bottom: 30px;
+        padding: 20px;
+        background: rgba(0, 255, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    input {
+        padding: 10px;
+        width: 300px;
+        margin-right: 10px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        margin: 2px;
+    }
+
+    .add-btn {
+        background: lime;
+        color: navy;
+        font-weight: bold;
+    }
+
+    .controls {
+        margin: 20px 0;
+        padding: 15px;
+        background: rgba(0, 255, 0, 0.05);
+        border-radius: 10px;
+    }
+
+    .sort-btn {
+        background: #666;
+        color: white;
+        margin: 0 5px;
+    }
+
+    .sort-btn.active {
+        background: lime;
+        color: navy;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    li {
+        background: #f4f4f4;
+        margin: 10px 0;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 8px;
+        color: #333;
+    }
+
+    .task-content {
+        flex-grow: 1;
+        text-align: left;
+        padding-right: 15px;
+    }
+
+    .task-text {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .task-meta {
+        font-size: 12px;
+        color: #666;
+        margin-top: 5px;
+    }
+
+    .task-buttons {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    /* Status-specific styling */
+    .status-added {
+        border-left: 5px solid #007bff;
+    }
+
+    .status-started {
+        border-left: 5px solid #ffc107;
+        background: #fff8e1;
+    }
+
+    .status-needs_finish {
+        border-left: 5px solid #ff9800;
+        background: #fff3e0;
+    }
+
+    .status-completed {
+        border-left: 5px solid #28a745;
+        background: #e8f5e8;
+        opacity: 0.8;
+    }
+
+    .status-cancelled {
+        border-left: 5px solid #dc3545;
+        background: #ffeaea;
+        opacity: 0.7;
+    }
+
+    /* Button styles */
+    .status-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        border: none;
+    }
+
+    .btn-start { background: #ffc107; color: #000; }
+    .btn-finish { background: #ff9800; color: white; }
+    .btn-complete { background: #28a745; color: white; }
+    .btn-cancel { background: #6c757d; color: white; }
+    .btn-edit { background: #17a2b8; color: white; }
+    .btn-delete { background: #dc3545; color: white; }
+
+    .status-indicator {
+        display: inline-block;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .status-added .status-indicator {
+        background: #007bff;
+        color: white;
+    }
+
+    .status-started .status-indicator {
+        background: #ffc107;
+        color: #000;
+    }
+
+    .status-needs_finish .status-indicator {
+        background: #ff9800;
+        color: white;
+    }
+
+    .status-completed .status-indicator {
+        background: #28a745;
+        color: white;
+    }
+
+    .status-cancelled .status-indicator {
+        background: #dc3545;
+        color: white;
+    }
+</style>
+</head>
+<body>
+    <h1>📝 speakTODO App</h1>
+    
+    <div class="input-section">
+        <input type="text" id="todoText" placeholder="Enter a task" onkeypress="handleKeyPress(event)">
+        <button class="add-btn" onclick="addTodo()">Add Task</button>
+    </div>
+
+    <div class="controls">
+        <strong>Sort by:</strong>
+        <button class="sort-btn" onclick="sortTasks('date')" id="sortDate">Date</button>
+        <button class="sort-btn active" onclick="sortTasks('status')" id="sortStatus">Status</button>
+        <button class="sort-btn" onclick="sortTasks('text')" id="sortText">Text</button>
+        <span style="margin-left: 20px;">
+            <strong>Filter:</strong>
+            <button class="sort-btn" onclick="filterTasks('all')" id="filterAll">All</button>
+            <button class="sort-btn" onclick="filterTasks('active')" id="filterActive">Active</button>
+            <button class="sort-btn" onclick="filterTasks('completed')" id="filterCompleted">Completed</button>
+        </span>
+    </div>
+    
+    <ul id="todoList"></ul>
+
+    <script>
+        const apiBaseUrl = window.location.origin + '/api';
+        let allTodos = [];
+        let currentSort = 'status';
+        let currentFilter = 'all';
+
+        async function fetchTodos() {
+            try {
+                const response = await fetch(`${apiBaseUrl}/todos`);
+                allTodos = await response.json();
+                displayTodos();
+            } catch (error) {
+                console.error('Error fetching todos:', error);
+            }
+        }
+
+        function displayTodos() {
+            let todosToShow = [...allTodos];
+            
+            // Apply filter
+            if (currentFilter === 'active') {
+                todosToShow = todosToShow.filter(todo => 
+                    todo.status !== 'completed' && todo.status !== 'cancelled'
+                );
+            } else if (currentFilter === 'completed') {
+                todosToShow = todosToShow.filter(todo => 
+                    todo.status === 'completed' || todo.status === 'cancelled'
+                );
+            }
+            
+            // Apply sort
+            todosToShow.sort((a, b) => {
+                if (currentSort === 'date') {
+                    return new Date(b.date || Date.now()) - new Date(a.date || Date.now());
+                } else if (currentSort === 'status') {
+                    const statusOrder = { 'added': 1, 'started': 2, 'needs_finish': 3, 'completed': 4, 'cancelled': 5 };
+                    return (statusOrder[a.status] || 0) - (statusOrder[b.status] || 0);
+                } else if (currentSort === 'text') {
+                    return a.text.localeCompare(b.text);
+                }
+                return 0;
+            });
+
+            const todoList = document.getElementById('todoList');
+            todoList.innerHTML = '';
+            
+            todosToShow.forEach(todo => {
+                const li = document.createElement('li');
+                li.className = `status-${todo.status || 'added'}`;
+                
+                li.innerHTML = `
+                    <div class="task-content">
+                        <div class="task-text">${todo.text}</div>
+                        <div class="task-meta">
+                            <span class="status-indicator">${todo.status || 'added'}</span>
+                            ${todo.date ? `📅 ${todo.date}` : ''}
+                            ${todo.time ? `⏰ ${todo.time}` : ''}
+                        </div>
+                    </div>
+                    <div class="task-buttons">
+                        ${getStatusButtons(todo)}
+                    </div>
+                `;
+                
+                todoList.appendChild(li);
+            });
+        }
+
+        function getStatusButtons(todo) {
+            const status = todo.status || 'added';
+            let buttons = '';
+            
+            if (status === 'added') {
+                buttons += `<button class="status-btn btn-start" onclick="updateTaskStatus(${todo.id}, 'started')">Start</button>`;
+            }
+            
+            if (status === 'started') {
+                buttons += `<button class="status-btn btn-finish" onclick="updateTaskStatus(${todo.id}, 'needs_finish')">Need Finish</button>`;
+            }
+            
+            if (status === 'needs_finish' || status === 'started') {
+                buttons += `<button class="status-btn btn-complete" onclick="updateTaskStatus(${todo.id}, 'completed')">Complete</button>`;
+            }
+            
+            if (status !== 'completed' && status !== 'cancelled') {
+                buttons += `<button class="status-btn btn-cancel" onclick="updateTaskStatus(${todo.id}, 'cancelled')">Cancel</button>`;
+                buttons += `<button class="status-btn btn-edit" onclick="editTask(${todo.id})">Edit</button>`;
+            }
+            
+            buttons += `<button class="status-btn btn-delete" onclick="deleteTodo(${todo.id})">Delete</button>`;
+            
+            return buttons;
+        }
+
+        async function addTodo() {
+            const todoText = document.getElementById('todoText').value.trim();
+            if (!todoText) return;
+            
+            try {
+                await fetch(`${apiBaseUrl}/todos`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: todoText, status: 'added' })
+                });
+                document.getElementById('todoText').value = '';
+                fetchTodos();
+            } catch (error) {
+                console.error('Error adding todo:', error);
+            }
+        }
+
+        async function updateTaskStatus(id, newStatus) {
+            try {
+                await fetch(`${apiBaseUrl}/todos/${id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ status: newStatus })
+                });
+                fetchTodos();
+            } catch (error) {
+                console.error('Error updating task status:', error);
+            }
+        }
+
+        async function deleteTodo(id) {
+            if (confirm('Are you sure you want to delete this task?')) {
+                try {
+                    await fetch(`${apiBaseUrl}/todos/${id}`, { method: 'DELETE' });
+                    fetchTodos();
+                } catch (error) {
+                    console.error('Error deleting todo:', error);
+                }
+            }
+        }
+
+        function editTask(id) {
+            const todo = allTodos.find(t => t.id === id);
+            if (todo) {
+                const newText = prompt('Edit task:', todo.text);
+                if (newText && newText.trim() && newText !== todo.text) {
+                    updateTaskDetails(id, newText.trim());
+                }
+            }
+        }
+
+        async function updateTaskDetails(id, text) {
+            try {
+                await fetch(`${apiBaseUrl}/todos/${id}/details`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text })
+                });
+                fetchTodos();
+            } catch (error) {
+                console.error('Error updating task details:', error);
+            }
+        }
+
+        function sortTasks(sortBy) {
+            currentSort = sortBy;
+            
+            // Update active button
+            document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`sort${sortBy.charAt(0).toUpperCase() + sortBy.slice(1)}`).classList.add('active');
+            
+            displayTodos();
+        }
+
+        function filterTasks(filter) {
+            currentFilter = filter;
+            
+            // Update active button
+            document.querySelectorAll('[id^="filter"]').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`filter${filter.charAt(0).toUpperCase() + filter.slice(1)}`).classList.add('active');
+            
+            displayTodos();
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                addTodo();
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', fetchTodos);
+        setInterval(fetchTodos, 10000); // Auto-refresh every 10 seconds
+    </script>
+</body>
+</html>
